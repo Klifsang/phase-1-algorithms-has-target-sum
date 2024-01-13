@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let isAvailable = false;
+  for (let i = 0; i < array.length; i++) {
+    const index = array.indexOf(target - array[i]);
+    isAvailable = index !== -1 && index !== i;
+    if (isAvailable) break;
+  }
+  return isAvailable;
 }
 
 /* 
